@@ -21,30 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":"ture","version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="简介">
+    <meta name="description" content="《SoundSystemEngineering》读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reaper JS插件">
-<meta property="og:url" content="http://example.com/2022/03/25/Reaper-JS%E6%8F%92%E4%BB%B6/index.html">
+<meta property="og:title" content="关于分贝的概念和音响系统中的应用">
+<meta property="og:url" content="http://example.com/2020/03/01/%E5%85%B3%E4%BA%8E%E5%88%86%E8%B4%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E9%9F%B3%E5%93%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
 <meta property="og:site_name" content="walkinblues的网络日志">
-<meta property="og:description" content="简介">
+<meta property="og:description" content="《SoundSystemEngineering》读书笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-25T06:57:44.000Z">
-<meta property="article:modified_time" content="2022-03-25T06:58:39.343Z">
+<meta property="article:published_time" content="2020-03-01T09:00:27.000Z">
+<meta property="article:modified_time" content="2022-04-30T09:39:23.382Z">
 <meta property="article:author" content="walkinblues">
-<meta property="article:tag" content="Reaper">
-<meta property="article:tag" content="插件">
-<meta property="article:tag" content="编程">
+<meta property="article:tag" content="音响系统">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2022/03/25/Reaper-JS%E6%8F%92%E4%BB%B6/">
+<link rel="canonical" href="http://example.com/2020/03/01/%E5%85%B3%E4%BA%8E%E5%88%86%E8%B4%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E9%9F%B3%E5%93%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/03/25/Reaper-JS%E6%8F%92%E4%BB%B6/","path":"2022/03/25/Reaper-JS插件/","title":"Reaper JS插件"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2020/03/01/%E5%85%B3%E4%BA%8E%E5%88%86%E8%B4%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E9%9F%B3%E5%93%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/","path":"2020/03/01/关于分贝的概念和音响系统中的应用/","title":"关于分贝的概念和音响系统中的应用"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Reaper JS插件 | walkinblues的网络日志</title>
+<title>关于分贝的概念和音响系统中的应用 | walkinblues的网络日志</title>
   
 
 
@@ -111,7 +109,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -124,6 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%88%86%E8%B4%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E9%9F%B3%E5%93%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">关于分贝的概念和音响系统中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E8%B4%9D"><span class="nav-number">1.0.1.</span> <span class="nav-text">分贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%88%E5%9F%B9"><span class="nav-number">1.0.2.</span> <span class="nav-text">奈培</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E8%B4%9D%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BA%94%E7%94%A8"><span class="nav-number">1.0.3.</span> <span class="nav-text">分贝的基本应用</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -199,7 +198,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/25/Reaper-JS%E6%8F%92%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/03/01/%E5%85%B3%E4%BA%8E%E5%88%86%E8%B4%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E9%9F%B3%E5%93%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/IMG_2960.jpg">
@@ -212,12 +211,12 @@
     </span>
     
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Reaper JS插件 | walkinblues的网络日志">
-      <meta itemprop="description" content="简介">
+      <meta itemprop="name" content="关于分贝的概念和音响系统中的应用 | walkinblues的网络日志">
+      <meta itemprop="description" content="《SoundSystemEngineering》读书笔记">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Reaper JS插件
+          关于分贝的概念和音响系统中的应用
         </h1>
 
         <div class="post-meta-container">
@@ -227,9 +226,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-03-25 14:57:44 / 修改时间：14:58:39" itemprop="dateCreated datePublished" datetime="2022-03-25T14:57:44+08:00">2022-03-25</time>
+      <time title="创建时间：2020-03-01 17:00:27" itemprop="dateCreated datePublished" datetime="2020-03-01T17:00:27+08:00">2020-03-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-30 17:39:23" itemprop="dateModified" datetime="2022-04-30T17:39:23+08:00">2022-04-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -237,14 +242,14 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/ReaperJs/" itemprop="url" rel="index"><span itemprop="name">ReaperJs</span></a>
+          <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
         </span>
     </span>
 
   
 </div>
 
-            <div class="post-description">简介</div>
+            <div class="post-description">《SoundSystemEngineering》读书笔记</div>
         </div>
       </header>
 
@@ -252,7 +257,146 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        
+        <h1
+id="关于分贝的概念和音响系统中的应用">关于分贝的概念和音响系统中的应用</h1>
+<h3 id="分贝">分贝</h3>
+<ul>
+<li><p>分贝被定义为数值为<span
+class="math inline">\(10^{0.1}\)</span>的功率比值的对数形式。</p></li>
+<li><p>任何两个功率如果相差<span
+class="math inline">\(N\,dB\)</span>，则他们的比值为<span
+class="math inline">\(10^{N(0.1)}\)</span>:</p></li>
+</ul>
+<p><span class="math display">\[
+\frac{P1}{P2} = 10^{N(0.1)}
+\]</span></p>
+<p><span class="math display">\[
+   10lg\frac{P1}{P2} = N\quad dB
+\]</span></p>
+<h3 id="奈培">奈培</h3>
+<ul>
+<li>奈培<span class="math inline">\((Np)\)</span>被定义为： <span
+class="math display">\[
+ln(\frac{E1}{E2}) = N(Np)
+\]</span>
+<ul>
+<li>E为电压值</li>
+</ul></li>
+<li>奈培<span class="math inline">\(dB\)</span>之间的关系：</li>
+</ul>
+<p><span class="math display">\[
+（\frac{P~1}{P~2}) = (\frac{E~1}{E~2})^2 = (e^2)）
+\]</span></p>
+<ul>
+<li>可以得到<span class="math inline">\(1Np\)</span>等同于<span
+class="math inline">\(8.686dB\)</span></li>
+</ul>
+<hr />
+<h3 id="分贝的基本应用">分贝的基本应用</h3>
+<ul>
+<li><strong>分贝始终且只能以功率比值为基础</strong>。任何其他形式的比值（比如：电压电流或声压）都必须首先平方转换成功率的比值之后再转换成分贝表示的<strong>功率级</strong>。
+<ul>
+<li>功率比=电压比的平方：</li>
+<li>（2-5）</li>
+</ul></li>
+<li>dB本身是一种对数标尺刻度，术语“级”始终用在以dB为单位表示功率。（声压级、声功率级等）</li>
+<li>给出基准参考值时，才可以使用分贝数得到绝对值。</li>
+</ul>
+<ol type="1">
+<li><p>电压比到功率比</p>
+<ul>
+<li><strong>在电路的同一点上</strong>电压放大倍数 = 功率放大倍数^2</li>
+<li><span class="math inline">\(10log\frac{P1}{P2} =
+20lg\frac{V1}{V2}\)</span></li>
+<li>备注：Lg（2/1） = 0.30103</li>
+</ul></li>
+<li><p>dBV</p>
+<ul>
+<li>在使用分贝这一单位视，<strong>“级”是专门针对功率而言的</strong>。对于电压幅度上的增加，应该称为“放大量”。</li>
+<li>dBV的基准参考电压为1.0V（1.0V时为0dBV）。</li>
+<li></li>
+</ul></li>
+<li><p>dBm</p>
+<ul>
+<li>音频领域的功率参考基准为<span
+class="math inline">\(10^{-3}W\)</span></li>
+<li><span class="math inline">\(0dBm = 0.001W\)</span></li>
+<li>在定压系统中，功率级随阻抗变化。在定流系统中，电压随阻抗变化。所以当使用电压表示的分贝时阻抗必须要给出。</li>
+<li>电功率的测量:
+<ul>
+<li><span class="math inline">\(W = EIcos\theta = I^2Zcos\theta =
+\frac{E^2}{Z}cos\theta\)</span>
+<ul>
+<li>Z为阻抗，<span
+class="math inline">\(\theta\)</span>为E和I的相差</li>
+<li>使用单一频率的正弦波电压和电流才成立</li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\(功率变化量(dB) =
+10log[(\frac{E_1^2}{E_2^2})(\frac{R2}{R1})] = 20lg\frac{E1}{E2} +
+10lg\frac{R2}{R1}\)</span>
+<ul>
+<li>仅当<span class="math inline">\(R1 = R2\)</span>时，<span
+class="math inline">\(功率级(dB) = 20lg\frac{E1}{E2}\)</span></li>
+<li>实践当中与测量精度有关，当器件在工作时，由于温度和环境变化R值也会产生变化</li>
+</ul></li>
+<li>实例：</li>
+<li>当以dBm为单位表示功率级时，通常将<span class="math inline">\(E2 =
+0.775V，R2 =
+600\Omega\)</span>（声频标准）。E2和R2可以是任意值，只要结合起来得到1mW的功率。</li>
+<li>功率定义：
+<ul>
+<li><span class="math inline">\(视在功率 = E\times
+I或E^2/Z\)</span></li>
+<li><span
+class="math inline">\(平均的实际功率或吸收功率为(E^2/Z)cos\theta\)</span></li>
+<li><span class="math inline">\(无功功率为(E^2/Z)sin\theta\)</span></li>
+<li><span class="math inline">\(功率因子 = cos\theta\)</span></li>
+<li>术语“增益”或“损耗”始终表示被测设备在系统输出上的功率增益或功率损耗<br />
+</li>
+</ul></li>
+</ul></li>
+<li><p><span class="math inline">\(L_I、L_W和L_P\)</span></p>
+<ul>
+<li>声强级<span class="math inline">\(L_I =
+10lg\frac{xW/m^2}{10^{-12}W/m^2}\)</span></li>
+<li>声功率级<span class="math inline">\(L_W =
+10lg\frac{总的声功率瓦数}{10^{-12}W}\)</span></li>
+<li>声压级<span class="math inline">\(L_P = 20lg\frac{xPa}{20\mu Pa} =
+20lg\frac{P_{rms}}{20\mu Pa}\)</span>
+<ul>
+<li>Prms是声压的均方根值，单位是Pa</li>
+</ul></li>
+<li>平方反比定律
+<ul>
+<li><p>分析半径为0.282m的球体（该球表面积为<span
+class="math inline">\(1m^2\)</span>），球中心有一个全指向的点声源，向外辐射1W的声功率。</p></li>
+<li><p>此时在0.282m处<span class="math inline">\(L_P = L_I = L_W =
+120dB\)</span></p></li>
+<li><p>球的表面积与半径平方成正比，将球半径加倍，则表面积为原来的4倍（<span
+class="math inline">\(S = 4\pi r^2\)</span>）</p></li>
+<li><p>半径增加一倍，在0.564m处，声强降低6dB，0.282处的四分之一。<span
+class="math inline">\(L_P,L_I,L_W\)</span>都降低6dB。</p></li>
+<li><p>这种变化称为平方反比定律、</p></li>
+<li><p>方向性因子（<span class="math inline">\(Q\)</span>)</p>
+<ul>
+<li>当声源被视为半球形辐射时，在0.282处<span class="math inline">\(L_P =
+123.01dB，L_W\)</span>维持120dB。这3.01dB的变化体现的是单位面积上功率的2:1变化。
+<ul>
+<li>半球形辐射子的方向性因子时全方向辐射子的2倍。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>等效声级<span class="math inline">\(L_{EQ}\)</span></p>
+<ul>
+<li><span class="math display">\[\begin{equation} \label{eq1}
+e=mc^2
+\end{equation}\]</span></li>
+</ul></li>
+</ol>
+<p>Equation <span class="math inline">\(\eqref{eq2}\)</span> is a
+multi-line equation.</p>
 
     </div>
 
@@ -270,7 +414,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2022/03/25/Reaper-JS%E6%8F%92%E4%BB%B6/" title="Reaper JS插件">http://example.com/2022/03/25/Reaper-JS插件/</a>
+      <a href="http://example.com/2020/03/01/%E5%85%B3%E4%BA%8E%E5%88%86%E8%B4%9D%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E9%9F%B3%E5%93%8D%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" title="关于分贝的概念和音响系统中的应用">http://example.com/2020/03/01/关于分贝的概念和音响系统中的应用/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -279,20 +423,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/Reaper/" rel="tag"># Reaper</a>
-              <a href="/tags/%E6%8F%92%E4%BB%B6/" rel="tag"># 插件</a>
-              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/%E9%9F%B3%E5%93%8D%E7%B3%BB%E7%BB%9F/" rel="tag"># 音响系统</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/03/25/%E7%94%B5%E5%A3%B0%E4%BB%BF%E7%9C%9F/" rel="prev" title="COMSOL Multiphysics 声学仿真">
-                  <i class="fa fa-chevron-left"></i> COMSOL Multiphysics 声学仿真
-                </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/03/25/%E5%90%AC%E9%9F%B3%E8%AE%AD%E7%BB%83%E8%BD%AF%E4%BB%B6/" rel="next" title="听音训练软件">
+                  听音训练软件 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
